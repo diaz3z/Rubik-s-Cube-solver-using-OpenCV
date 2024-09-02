@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 cap = cv2.VideoCapture("videos/vid1.mp4")
-new_width = 600
-new_height = 600
+new_width = 480
+new_height = 480
 while True:
     ret, frame = cap.read()
     frame = cv2.resize(frame, (new_width,new_height))
