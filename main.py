@@ -10,11 +10,11 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gaussian = cv2.GaussianBlur(gray, (5,5), 0)
     canny = cv2.Canny(gray, 150, 100)
-    ret, thresh = cv2.threshold(canny, 100, 255, cv2.THRESH_BINARY)
+    #ret, thresh = cv2.threshold(canny, 100, 255, cv2.THRESH_BINARY)
     if not ret:
         break
     else:
-        cv2.imshow("window", thresh)
+        cv2.imshow("window", canny)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 cap.release()
