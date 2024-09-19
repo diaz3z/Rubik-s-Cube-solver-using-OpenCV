@@ -14,7 +14,7 @@ while True:
     if not ret:
         break
     else:
-        cv2.imshow("window", thresh)
+        cv2.imshow("window", )
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 cap.release()
