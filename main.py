@@ -13,13 +13,13 @@ while True:
     ret, thresh = cv2.threshold(canny, 100, 255, cv2.THRESH_BINARY)
     contour, heirarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE )
     for cnt in contour:
-        print(cv2.contourArea(cnt))
-        if cv2.contourArea(cnt) > 264:
+        print(cv2.arcLength(cnt, True))
+        if cv2.arcLength(cnt, True) > 264:
             cv2.drawContours(frame, cnt, -1, (0, 255, 0), 3)
     if not ret:
         break
     else:
-        cv2.imshow("window", thresh)
+        cv2.imshow("window", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 cap.release()
